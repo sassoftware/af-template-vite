@@ -1,0 +1,26 @@
+/*
+Copyright © 2023, SAS Institute Inc., Cary, NC, USA.  All Rights Reserved.
+SPDX-License-Identifier: Apache-2.0
+*/
+.avatar {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border 0.3s ease;
+  background-color: #555;
+  // for centering text when no avatar
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+
+  &:hover {
+    border: 1px solid white;
+  }
+}
