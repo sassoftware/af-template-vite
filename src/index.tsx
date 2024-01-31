@@ -10,16 +10,19 @@ import App from "./App";
 import Auth from "./Auth";
 
 import "./global.scss";
+import { initializeMsalInstance } from "./Auth/msalInstance";
 
 const queryClient = new QueryClient();
 const root = createRoot(document.getElementById("root")!);
 
-root.render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <Auth>
-        <App />
-      </Auth>
-    </QueryClientProvider>
-  </React.StrictMode>
-);
+initializeMsalInstance().then(() => {
+  root.render(
+    <React.StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <Auth>
+          <App />
+        </Auth>
+      </QueryClientProvider>
+    </React.StrictMode>
+  );
+});
